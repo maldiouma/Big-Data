@@ -1,0 +1,270 @@
+⚡ DÉMARRAGE RAPIDE - PROJET BIG DATA
+
+═══════════════════════════════════════════════════════════════════════════════
+  SYSTÈME D'ORIENTATION NATIONALE - Projet Big Data S10
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 COMMANDE POUR EXÉCUTER LE PROJET COMPLET :
+
+    python main.py
+
+    OU
+
+    python DEMO_COMPLETE.py    (avec pauses explicatives)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📋 PRÉREQUIS
+
+1. Python 3.8+ installé
+   • Vérifier : python --version
+
+2. Librairies requises installées
+   • pip install matplotlib numpy
+
+3. Fichiers du projet présents
+   • main.py
+   • DEMO_COMPLETE.py
+   • scripts/ (dossier avec tous les modules)
+   • data/ (dossier pour les fichiers générés)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 TROIS FAÇONS D'EXÉCUTER :
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+OPTION 1 : Menu Interactif (Recommandé pour apprentissage)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  $ python main.py
+
+  Menu :
+    1. 🔧 Générer dataset
+    2. 📁 Afficher fichiers
+    3. 🖥️  MapReduce
+    4. 🏛️  Hive
+    5. 🔶 HBase
+    6. 📈 Visualisations
+    7. 🚀 PIPELINE COMPLET
+    8. 📊 Résumés
+    9. ❌ Quitter
+
+  Choisir l'option 7 pour exécuter automatiquement de A à Z
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+OPTION 2 : Démonstration Pas-à-pas (Meilleur pour comprendre)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  $ python DEMO_COMPLETE.py
+
+  Affiche chaque étape avec explications détaillées
+  Pause après chaque étape pour lire les explications
+  Appuyer ENTRÉE pour avancer
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+OPTION 3 : Exécuter les modules individuellement
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  # Étape 1 : Générer dataset
+  $ python scripts/generation_dataset.py
+
+  # Étape 2 : MapReduce
+  $ python scripts/mapreduce_job.py
+
+  # Étape 3 : Hive
+  $ python scripts/hive_queries.py
+
+  # Étape 4 : HBase
+  $ python scripts/hbase_operations.py
+
+  # Étape 5 : Visualisations
+  $ python scripts/visualisations.py
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⏱️ TEMPS D'EXÉCUTION
+
+  • Génération dataset (5000 candidats) : ~2-3 secondes
+  • MapReduce (calcul FG) : ~1 seconde
+  • Hive (analyses) : ~1 seconde
+  • HBase (affectations) : ~1 seconde
+  • Visualisations (graphiques) : ~3-4 secondes
+  ─────────────────────────────────
+  TOTAL : ~8-10 secondes pour le pipeline complet ⚡
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📁 FICHIERS GÉNÉRÉS AUTOMATIQUEMENT
+
+Après exécution, votre dossier contiendra :
+
+data/
+├── candidats.txt        (5000 candidats)
+├── notes.txt            (40,000 notes)
+├── choix.txt            (15,000 choix)
+├── filiere.json         (dictionnaire filières)
+├── rang.txt             (classement MapReduce output)
+└── resultats.txt        (affectations finales output)
+
+visualisations/
+├── Histogrammes_Matieres.png
+├── Distribution_Filieres.png
+├── Courbe_Moyennes.png
+├── Histogramme_FG.png
+└── Repartition_Affectations.png
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ VÉRIFICATION - TOUT FONCTIONNE ?
+
+Après exécution, vérifier :
+
+1. Dossier data/ contient 6 fichiers
+   $ ls -lh data/
+
+2. Dossier visualisations/ contient 5 fichiers PNG
+   $ ls -lh visualisations/
+
+3. Les fichiers ne sont pas vides
+   $ wc -l data/candidats.txt       # Doit afficher 5001
+   $ wc -l data/rang.txt             # Doit afficher 5001
+   $ wc -l data/resultats.txt        # Doit afficher 5001
+
+4. Les graphiques s'ouvrent
+   • Double-cliquer sur les fichier .png dans visualisations/
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔧 DÉPANNAGE - EN CAS DE PROBLÈME
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║ ERREUR : "ModuleNotFoundError: No module named 'matplotlib'"              ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║ SOLUTION :                                                                  ║
+║   pip install matplotlib numpy                                             ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║ ERREUR : "FileNotFoundError: [Errno 2] No such file or directory"         ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║ SOLUTION :                                                                  ║
+║   1. Vérifier qu'on est dans le bon répertoire :                           ║
+║      cd "Projet Big Data"                                                   ║
+║   2. Vérifier que main.py existe :                                         ║
+║      ls main.py                                                             ║
+║   3. Vérifier que le dossier scripts existe :                              ║
+║      ls scripts/                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║ ERREUR : "Permission denied" en exécutant les scripts                      ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║ SOLUTION :                                                                  ║
+║   chmod +x *.py          # Linux/Mac                                       ║
+║   # Windows : pas besoin de cette commande                                 ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTATION
+
+Fichiers importants à lire :
+
+1. README.md
+   • Vue d'ensemble du projet
+   • Structure complète
+   • Explications détaillées
+
+2. rapport/RAPPORT.md
+   • Rapport complet style "compte-rendu"
+   • Prêt à soumettre au professeur
+   • 20 pages de documentation
+
+3. DEMO_COMPLETE.py
+   • Démonstration avec explications
+   • Idéal pour comprendre le flux
+
+4. main.py
+   • Menu interactif
+   • Permet tester chaque étape
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎓 STRUCTURE PÉDAGOGIQUE
+
+Le projet suit exactement le cahier des charges :
+
+PARTIE A : Génération dataset          ✅ scripts/generation_dataset.py
+PARTIE B : Stockage HDFS               ✅ Simulation (scripts/*)
+PARTIE C : MapReduce FG & Rang         ✅ scripts/mapreduce_job.py
+PARTIE D : Hive analyses               ✅ scripts/hive_queries.py
+PARTIE E : HBase affectations          ✅ scripts/hbase_operations.py
+PARTIE F : Visualisations              ✅ scripts/visualisations.py
+PARTIE G : Menu principal              ✅ main.py
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🌟 EXEMPLE D'EXÉCUTION COMPLÈTE
+
+$ python main.py
+
+╔═════════════════════════════════════════════════════════════════════════════╗
+║       DÉMONSTRATION COMPLÈTE - PROJET BIG DATA                              ║
+╚═════════════════════════════════════════════════════════════════════════════╝
+
+───────────────────────────────────────────────────────────────────────────────
+MENU PRINCIPAL - Choisissez une option
+───────────────────────────────────────────────────────────────────────────────
+
+1. 🔧 Générer le dataset (Candidats + Notes + Choix + Filières)
+2. 📁 Afficher les fichiers générés et statistiques
+3. 🖥️  Calculer le rang via MapReduce
+4. 🏛️  Charger dans Hive et exécuter requêtes analytiques
+5. 🔶 Traiter avec HBase et générer résultats d'orientation
+6. 📈 Visualiser les statistiques (graphiques)
+7. 🚀 EXÉCUTER LE PIPELINE COMPLET (1 → 6)
+8. 📊 Afficher les résumés finaux
+9. ❌ Quitter
+
+Entrez votre choix (1-9) : 7
+
+[Lance le pipeline complet...]
+
+═══════════════════════════════════════════════════════════════════════════════
+
+💡 CONSEILS POUR LE RAPPORT
+
+Quand vous préparez votre rapport ou présentation :
+
+1. Utiliser les fichiers générés comme preuves
+   • Afficher des extraits de candidats.txt
+   • Montrer des statistiques de rang.txt
+   • Inclure des graphiques de visualisations/
+
+2. Montrer les commandes exécutées
+   • Les résultats Hive
+   • L'évolution des capacités HBase
+   • Les statistiques
+
+3. Expliquer l'algorithme d'affectation
+   • Respecte le mérite (trier par FG)
+   • Respecte les choix (3 choix par candidat)
+   • Décrémente les capacités
+
+4. Interpréter les résultats
+   • Pourquoi 8.3% d'affectation seulement ?
+   • Comment améliorer ?
+   • Limites du système
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎉 VOUS ÊTES PRÊT À COMMENCER !
+
+Tapez :    python main.py
+           Puis choisissez l'option 7
+
+Bon courage ! 🚀
+
+═══════════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # Service principal : Application Big Data + Jupyter
+  bigdata-app:
+    container_name: projet-bigdata-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"  # Jupyter Notebook
+      - "5000:5000"  # Flask (si nécessaire)
+    volumes:
+      - ./data:/app/data
+      - ./visualisations:/app/visualisations
+      - ./rapport:/app/rapport
+      - ./scripts:/app/scripts
+      - ./NOTEBOOK_SOUMISSION.ipynb:/app/NOTEBOOK_SOUMISSION.ipynb
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - PYTHONUNBUFFERED=1
+    command: jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''
+    networks:
+      - bigdata-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Service optionnel : Analyse des données avec Dash
+  visualizer:
+    container_name: projet-bigdata-dash
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8050:8050"
+    volumes:
+      - ./data:/app/data
+      - ./visualisations:/app/visualisations
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python /app/run_dash.py
+    networks:
+      - bigdata-network
+    depends_on:
+      - bigdata-app
+    profiles:
+      - visualizer  # Optionnel : lancer avec --profile visualizer
+
+networks:
+  bigdata-network:
+    driver: bridge
+
+volumes:
+  jupyter-data:
+  project-data:

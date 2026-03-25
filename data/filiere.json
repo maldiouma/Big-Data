@@ -1,0 +1,22 @@
+{
+  "E101": [
+    "École d'Ingénierie MP",
+    200
+  ],
+  "E205": [
+    "École d'Ingénierie PC",
+    150
+  ],
+  "E301": [
+    "École Polytechnique",
+    100
+  ],
+  "E402": [
+    "Institut Technologique",
+    180
+  ],
+  "E503": [
+    "École Managériale",
+    250
+  ]
+}
