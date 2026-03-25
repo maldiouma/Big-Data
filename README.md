@@ -1,6 +1,6 @@
-# 🎓 PROJET BIG DATA - SYSTÈME D'ORIENTATION NATIONALE
+#  PROJET BIG DATA - SYSTÈME D'ORIENTATION NATIONALE
 
-## 📝 Vue d'ensemble
+##  Vue d'ensemble
 
 Ce projet implémente une **solution Big Data complète** pour gérer un système d'orientation nationale utilisant les technologies Hadoop, MapReduce, Hive et HBase.
 
@@ -10,15 +10,16 @@ Ce projet implémente une **solution Big Data complète** pour gérer un systèm
 
 ---
 
-## 🏗️ STRUCTURE DU PROJET
+##  STRUCTURE DU PROJET
 
 ```
 Projet-Big-Data/
-├── main.py                          # ✅ MENU PRINCIPAL INTERACTIF
+├── main.py                          # MENU PRINCIPAL INTERACTIF
 │
 ├── scripts/                         # Modules Python
 │   ├── generation_dataset.py       # Génération du dataset
-│   ├── mapreduce_job.py            # Job MapReduce (scores FG et rangs)
+│   ├── mapreduce_job.py            # Job MapReduce (scores FG et rangs
+)
 │   ├── hive_queries.py             # Requêtes Hive analytiques
 │   ├── hbase_operations.py         # Simulation HBase + affectations
 │   └── visualisations.py           # Graphiques (matplotlib)
@@ -44,7 +45,7 @@ Projet-Big-Data/
 
 ---
 
-## 🚀 DÉMARRAGE RAPIDE
+##  DÉMARRAGE RAPIDE
 
 ### Option 1 : Pipeline Complet (Recommandé)
 
@@ -62,13 +63,13 @@ python main.py
 python main.py
 
 # Puis utiliser le menu:
-# 1️⃣  Générer dataset
-# 2️⃣  Afficher fichiers
-# 3️⃣  MapReduce
-# 4️⃣  Hive
-# 5️⃣  HBase
-# 6️⃣  Visualisations
-# 9️⃣  Quitter
+# 1️  Générer dataset
+# 2️  Afficher fichiers
+# 3️  MapReduce
+# 4️  Hive
+# 5️  HBase
+# 6️ Visualisations
+# 9️ Quitter
 ```
 
 ### Option 3 : Exécution directe des modules
@@ -92,11 +93,11 @@ python scripts/visualisations.py
 
 ---
 
-## 📊 PHASE 1 : GÉNÉRATION DU DATASET
+##  PHASE 1 : GÉNÉRATION DU DATASET
 
 ### Fichiers générés :
 
-#### 1️⃣ **candidats.txt**
+#### 1️ **candidats.txt**
 Format : `Num_CIN Nom Prenom Filiere`
 
 ```
@@ -107,7 +108,7 @@ Num_CIN Nom Prenom Filiere
 ...
 ```
 
-#### 2️⃣ **notes.txt**
+#### 2️ **notes.txt**
 Format : `Num_CIN Analyse Algèbre Physique Chimie Informatique STA Français Anglais`
 
 ```
@@ -117,7 +118,7 @@ Num_CIN Analyse Algèbre Physique Chimie Informatique STA Français Anglais
 ...
 ```
 
-#### 3️⃣ **choix.txt**
+#### 3️ **choix.txt**
 Format : `Num_CIN Choix1 Choix2 Choix3`
 
 ```
@@ -127,7 +128,7 @@ Num_CIN Choix1 Choix2 Choix3
 ...
 ```
 
-#### 4️⃣ **filiere.json**
+#### 4️ **filiere.json**
 Dictionnaire des filières avec leurs codes et capacités
 
 ```json
@@ -142,7 +143,7 @@ Dictionnaire des filières avec leurs codes et capacités
 
 ---
 
-## 🗺️ PHASE 2 : STOCKAGE HDFS
+##  PHASE 2 : STOCKAGE HDFS
 
 **Commandes HDFS simulées** (en production) :
 
@@ -162,7 +163,7 @@ hdfs dfs -ls /orientation/
 
 ---
 
-## 🔧 PHASE 3 : MAPREDUCE - CALCUL DU SCORE FG
+##  PHASE 3 : MAPREDUCE - CALCUL DU SCORE FG
 
 ### Formule du Score FG :
 
@@ -190,7 +191,7 @@ Num_CIN FG Rang
 
 ---
 
-## 📊 PHASE 4 : HIVE - ANALYSES ANALYTIQUES
+##  PHASE 4 : HIVE - ANALYSES ANALYTIQUES
 
 ### Requêtes exécutées :
 
@@ -221,7 +222,7 @@ SELECT filiere_affectee, COUNT(*) FROM resultats GROUP BY filiere_affectee
 
 ---
 
-## 🔶 PHASE 5 : HBASE - AFFECTATIONS
+##  PHASE 5 : HBASE - AFFECTATIONS
 
 ### Tables HBase :
 
@@ -281,7 +282,7 @@ Num_CIN Filiere_Affectee
 
 ---
 
-## 📈 PHASE 6 : VISUALISATIONS
+##  PHASE 6 : VISUALISATIONS
 
 Les graphiques générés dans `visualisations/` :
 
@@ -302,7 +303,7 @@ Nombre d'affectations par filière (barres)
 
 ---
 
-## 💡 POINTS CLÉS DE L'IMPLÉMENTATION
+##  POINTS CLÉS DE L'IMPLÉMENTATION
 
 ### 1. **Mérité respecté**
 - Les candidats avec les meilleures notes sont testés en premier
@@ -326,19 +327,7 @@ Nombre d'affectations par filière (barres)
 
 ---
 
-## 📋 GRILLE D'ÉVALUATION
 
-| Criterion | Points | Status |
-|-----------|--------|--------|
-| Génération dataset | 4 | ✅ |
-| HDFS | 2 | ✅ |
-| MapReduce | 4 | ✅ |
-| Hive | 3 | ✅ |
-| HBase | 3 | ✅ |
-| Visualisation | 2 | ✅ |
-| Menu principal | 1 | ✅ |
-| Rapport | 1 | ⏳ |
-| **TOTAL** | **20** | **16/20** |
 
 ---
 
@@ -371,7 +360,7 @@ python -c "from scripts.visualisations import *; trace_courbes()"
 
 ---
 
-## ⚠️ PRÉREQUIS
+##  PRÉREQUIS
 
 ```
 Python 3.8+
@@ -386,16 +375,7 @@ pip install matplotlib numpy
 
 ---
 
-## 📝 COMMENTAIRES INCLUS
 
-Tous les fichiers Python incluent :
-- ✅ Commentaires en français détaillés
-- ✅ Docstrings pour chaque fonction
-- ✅ Explications du flux de données
-- ✅ Notes sur les décisions d'implémentation
-- ✅ Formules mathématiques expliquées
-
----
 
 ## 🎯 RÉSUMÉ
 
@@ -419,15 +399,6 @@ Rapport final
 
 **Tout automatisé via un menu interactif Python ! 🐍**
 
----
-
-## 📞 Support
-
-En cas de problème :
-1. Vérifiez que tous les fichiers sont dans le bon répertoire
-2. Vérifiez que Python 3.8+ est installé
-3. Vérifiez que matplotlib est installé
-4. Consultez les messages d'erreur du programme
 
 ---
 
